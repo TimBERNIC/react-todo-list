@@ -1,35 +1,19 @@
+import DeleteButton from "./DeleteButton";
+import CheckBox from "./CheckBox";
 import { useState } from "react";
-import { FaTrash } from "react-icons/fa";
-const Task = ({ taskTab, setTaskTab, element }) => {
+
+const Task = ({ taskTab, setTaskTab, element, index }) => {
   const [taskDivClass, setTaskDivClass] = useState("non-striped-task");
 
   return (
-    <li key={element.id} id={element.id}>
-      <input
-        type="checkbox"
-        onClick={() => {
-          const foundTask = taskTab.find(
-            (taskTabElement) => taskTabElement.id === element.id
-          );
-
-          taskDivClass === "non-striped-task"
-            ? setTaskDivClass("striped-task")
-            : setTaskDivClass("non-striped-task");
-        }}
-      />
+    <li key={index} id={element.id}>
+      <CheckBox taskDivClass={taskDivClass} setTaskDivClass={setTaskDivClass} />
       <div className={taskDivClass}>{element.title}</div>
-      <button
-        onClick={() => {
-          const foundTaskIndex = taskTab.findIndex(
-            (taskTabElement) => taskTabElement.id === element.id
-          );
-
-          const taskTabCopy = [...taskTab];
-          taskTabCopy.splice(foundTaskIndex, 1);
-          setTaskTab(taskTabCopy);
-        }}>
-        <FaTrash />
-      </button>
+      <DeleteButton
+        taskTab={taskTab}
+        setTaskTab={setTaskTab}
+        element={element}
+      />
     </li>
   );
 };

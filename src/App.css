@@ -47,8 +47,28 @@ main {
   word-wrap: break-word;
   overflow-wrap: break-word;
   text-decoration: line-through;
+  color: rgb(195, 195, 195);
 }
 
+.delete-button {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: none;
+  border-radius: 5px;
+  background-color: white;
+  color: #5c48d3;
+}
+
+.delete-button:hover {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  border-radius: 5px;
+  background-color: white;
+  opacity: 0.7;
+}
 .input-box {
   display: flex;
   justify-content: center;
