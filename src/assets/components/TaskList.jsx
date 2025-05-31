@@ -4,12 +4,14 @@ const TaskList = ({ taskTab, setTaskTab }) => {
     <ul className="task-list-box">
       {taskTab.map((element, index) => {
         return (
-          <Task
-            taskTab={taskTab}
-            element={element}
-            setTaskTab={setTaskTab}
-            index={index}
-          />
+          <>
+            <Task
+              taskTab={taskTab}
+              element={element}
+              setTaskTab={setTaskTab}
+              index={index}
+            />
+          </>
         );
       })}
     </ul>
