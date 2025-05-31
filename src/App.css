@@ -80,7 +80,7 @@ main {
   display: flex;
   align-items: center;
   justify-content: center;
-
+  cursor: pointer;
   border-radius: 5px;
   background-color: white;
   opacity: 0.7;
@@ -121,4 +121,9 @@ main {
   border: none;
   color: white;
   font-size: 20px;
+}
+
+.task-button:hover {
+  cursor: pointer;
+  opacity: 0.7;
 }
