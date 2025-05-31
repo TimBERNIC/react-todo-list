@@ -1,0 +1,14 @@
+header {
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  margin: 20px 0px;
+}
+
+header > div {
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  font-size: 48px;
+  gap: 30px;
+}
