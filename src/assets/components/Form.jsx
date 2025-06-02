@@ -1,4 +1,6 @@
-const Form = ({ task, setTask, taskTab, setTaskTab }) => {
+import CommentBox from "./CommentBox";
+
+const Form = ({ task, setTask, taskTab, setTaskTab, comment, commentBox }) => {
   return (
     <form
       onSubmit={(event) => {
@@ -7,7 +9,8 @@ const Form = ({ task, setTask, taskTab, setTaskTab }) => {
         taskTabCopy.push({
           title: task,
           id: crypto.randomUUID(5),
-          commentBox: true,
+          commentBox: { commentBox },
+          comment: { comment },
         });
         setTaskTab(taskTabCopy);
       }}

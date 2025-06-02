@@ -1,10 +1,20 @@
 import DeleteButton from "./DeleteButton";
 import CheckBox from "./CheckBox";
 import { useState } from "react";
+import CommentBox from "./CommentBox";
 
-const Task = ({ taskTab, setTaskTab, element, index }) => {
+const Task = ({
+  taskTab,
+  setTaskTab,
+  element,
+  index,
+  comment,
+  setComment,
+  commentBox,
+  setCommentBox,
+}) => {
   const [taskDivClass, setTaskDivClass] = useState("non-striped-task");
-  const [comment, setComment] = useState(false);
+
   return (
     <>
       <li key={index} id={element.id}>
@@ -19,16 +29,14 @@ const Task = ({ taskTab, setTaskTab, element, index }) => {
           element={element}
         />
       </li>
-      <div className="comment-box">
-        <button
-          onClick={() => {
-            comment ? setComment(false) : setComment(true);
-          }}
-          className="comment-button">
-          comment
-        </button>
-        {comment && <textarea placeholder="Détails" className="text-area" />}
-      </div>
+      <CommentBox
+        comment={comment}
+        setComment={setComment}
+        taskTab={taskTab}
+        setTaskTab={setTaskTab}
+        commentBox={commentBox}
+        setCommentBox={setCommentBox}
+      />
     </>
   );
 };

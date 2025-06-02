@@ -11,6 +11,10 @@ import Form from "./assets/components/Form";
 const App = () => {
   const [task, setTask] = useState("");
   const [taskTab, setTaskTab] = useState([]);
+  const [commentBox, setCommentBox] = useState(false);
+  const [comment, setComment] = useState("");
+
+  console.log(taskTab);
 
   return (
     <>
@@ -22,13 +26,22 @@ const App = () => {
       <main>
         <div className="container">
           <div>
-            <TaskList taskTab={taskTab} setTaskTab={setTaskTab} />
+            <TaskList
+              taskTab={taskTab}
+              setTaskTab={setTaskTab}
+              comment={comment}
+              setComment={setComment}
+              commentBox={commentBox}
+              setCommentBox={setCommentBox}
+            />
           </div>
           <Form
             task={task}
             setTask={setTask}
             taskTab={taskTab}
             setTaskTab={setTaskTab}
+            comment={comment}
+            commentBox={commentBox}
           />
         </div>
       </main>
